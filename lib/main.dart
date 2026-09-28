@@ -8,25 +8,27 @@ class App extends StatelessWidget {
   const App({super.key});
 
   @override
-Widget build(BuildContext context) {
-  return MaterialApp(
-    title: 'Sandwich Shop App',
-    home: Scaffold(
-      appBar: AppBar(title: const Text('Sandwich Counter')),
-      body: const Center(
-        child: OrderItemDisplay(5, 'Footlong'),
-      ),
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Sandwich Shop App',
+      home: Scaffold(
+        appBar: AppBar(title: const Text('My Sandwich Shop')),
+        backgroundColor: Colors.blue,
+        body: const Center(child: OrderItemDisplay(5, 'Footlong')),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
+        ),
       ),
     );
-  
-}
+  }
 }
 
 class OrderItemDisplay extends StatelessWidget {
   final String itemType;
   final int quantity;
 
-   const OrderItemDisplay(this.quantity, this.itemType, {super.key});
+  const OrderItemDisplay(this.quantity, this.itemType, {super.key});
 
   @override
   Widget build(BuildContext context) {
